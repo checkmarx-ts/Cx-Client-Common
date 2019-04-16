@@ -36,7 +36,8 @@ public abstract class SASTUtils {
         CxXMLResults reportObj = null;
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(cxReport);
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(CxXMLResults.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(CxXMLResults.class.getPackage().getName(),
+                    CxXMLResults.class.getClassLoader());
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
             reportObj = (CxXMLResults) unmarshaller.unmarshal(byteArrayInputStream);
