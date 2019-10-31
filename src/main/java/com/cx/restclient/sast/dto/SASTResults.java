@@ -1,6 +1,5 @@
 package com.cx.restclient.sast.dto;
 
-import com.cx.restclient.cxArm.dto.Policy;
 import com.cx.restclient.cxArm.dto.Violation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
