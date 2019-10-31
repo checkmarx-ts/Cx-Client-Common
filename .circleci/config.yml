@@ -26,7 +26,7 @@ jobs:
       - run: mvn package
 
       - store_artifacts:
-          path: ~/repo/target/*.jar
+          path: ~/repo/target/
 
       - save_cache:
           paths:
