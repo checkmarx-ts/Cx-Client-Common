@@ -25,8 +25,17 @@ jobs:
 
       - run: mvn package
 
+      - run: cp ~/repo/target/*.jar 
+      
+      - run:
+          name: Extract jar to archive
+          command: |
+            mkdir ~/repo/artifacts
+            cp ~/repo/target/*.jar ~/repo/artifacts/
+
       - store_artifacts:
-          path: ~/repo/target/
+          path: ~/repo/artifacts
+          destination: jar
 
       - save_cache:
           paths:
